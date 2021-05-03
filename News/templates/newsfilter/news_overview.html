@@ -1,0 +1,31 @@
+{% extends 'newsfilter/base.html' %}
+{% block content_body %}
+<div class="container">
+    <table class="table table-bordered" id="example" style="width: 100%">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Auther</th>
+            <th scope="col">Category</th>
+            <th scope="col">News API Used</th>
+            <th scope="col">Authentic Vote</th>
+            <th scope="col">Fake Vote</th>
+            <th scope="col">Link</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for n in news %}
+            <tr>
+                <td>{{ n.title }}</td>
+                <td>{{ n.author }}</td>
+                <td>{{ n.category.name }}</td>
+                <td>{{ n.api_used }}</td>
+                <td>{{ n.authentic_count }}</td>
+                <td>{{ n.fake_count }}</td>
+                <td><a href="{% url 'news_detail' n.id %}">Read</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

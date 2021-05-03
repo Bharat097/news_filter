@@ -1,0 +1,36 @@
+{% extends 'newsfilter/base.html' %}
+{% block content_body %}
+<div class="container">
+    {% for msg in messages %}
+        <li>
+            {{ msg }}
+        </li>
+        <br>
+        <br>
+    {% endfor %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="id_username" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="id_username" name="unm" placeholder="Username" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="id_password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-6">
+              <input type="password" class="form-control" id="id_password" name="pwd" placeholder="Password" required>
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group col-sm-8 row d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary col-sm-2">Login</button> &nbsp; &nbsp; &nbsp;
+            <a class="btn btn-primary col-sm-2" href="{% url 'register' %}"> Register </a>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
