@@ -9,7 +9,6 @@ from .mail_helper import send_email
 class Notification(Thread):
     def __init__(self):
         self.base_url = "http://localhost:8000/authenticate_news"
-        self.from_email = "maharshivaghela333@gmail.com"
 
         super().__init__()
 
