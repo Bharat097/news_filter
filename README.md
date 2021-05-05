@@ -7,9 +7,8 @@ pip install -r requirements.txt
 
 ## Setup Database
 
-python manage.py db init  
+python manage.py makemigrations
 python manage.py db migrate  
-python manage.py db upgrade  
 
 
 ## Run Server
