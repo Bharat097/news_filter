@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 ## Setup Database
 
-python manage.py makemigrations
+python manage.py makemigrations  
 python manage.py db migrate  
 
 
